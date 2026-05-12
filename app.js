@@ -9,13 +9,13 @@ const tintCtx = tintCanvas.getContext("2d");
 const stateNames = ["Shadow", "Darks", "Low Mid", "Mid", "High Mid", "Lights", "Highlight"];
 const defaultColors = ["#141414", "#303133", "#55575a", "#777f7a", "#a1aca0", "#d6dfc3", "#fbffd9"];
 const defaultSvgPaths = [
-  "symbols/01-shadow-singularity.svg",
-  "symbols/02-dark-orbit.svg",
-  "symbols/03-low-mid-wormhole.svg",
-  "symbols/04-mid-light-cone.svg",
-  "symbols/05-high-mid-spacetime-grid.svg",
-  "symbols/06-light-timewave.svg",
-  "symbols/07-highlight-chronal-flare.svg",
+  "symbols/basic/01-full-square.svg",
+  "symbols/basic/02-empty-square-border.svg",
+  "symbols/basic/03-square-empty-center-dot.svg",
+  "symbols/basic/04-full-circle.svg",
+  "symbols/basic/05-empty-circle-border.svg",
+  "symbols/basic/06-full-triangle.svg",
+  "symbols/basic/07-arrow-45-degrees.svg",
 ];
 
 const controls = {
