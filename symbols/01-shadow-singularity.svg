@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Shadow singularity">
+  <path fill="#000" d="M128 28 238 128 128 228 18 128 128 28Zm0 48-57 52 57 52 57-52-57-52Z"/>
+  <circle cx="128" cy="128" r="31" fill="#000"/>
+  <path fill="none" stroke="#000" stroke-width="14" stroke-linecap="round" d="M76 74 180 182M180 74 76 182"/>
+</svg>

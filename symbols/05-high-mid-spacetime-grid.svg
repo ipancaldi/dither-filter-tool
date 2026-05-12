@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="High mid spacetime grid">
+  <path fill="none" stroke="#000" stroke-width="12" stroke-linecap="round" d="M42 82c48-28 124-28 172 0M42 128c48-28 124-28 172 0M42 174c48-28 124-28 172 0"/>
+  <path fill="none" stroke="#000" stroke-width="12" stroke-linecap="round" d="M78 42c-25 47-25 125 0 172M128 42c-20 47-20 125 0 172M178 42c25 47 25 125 0 172"/>
+  <circle cx="128" cy="128" r="19" fill="#000"/>
+</svg>

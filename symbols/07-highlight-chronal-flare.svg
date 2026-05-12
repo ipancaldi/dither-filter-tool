@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Highlight chronal flare">
+  <path fill="#000" d="M128 14 148 97 222 54 179 128 222 202 148 159 128 242 108 159 34 202 77 128 34 54 108 97 128 14Z"/>
+  <circle cx="128" cy="128" r="32" fill="#000"/>
+  <circle cx="128" cy="128" r="59" fill="none" stroke="#000" stroke-width="12"/>
+</svg>

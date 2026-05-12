@@ -8,6 +8,15 @@ const tintCtx = tintCanvas.getContext("2d");
 
 const stateNames = ["Shadow", "Darks", "Low Mid", "Mid", "High Mid", "Lights", "Highlight"];
 const defaultColors = ["#141414", "#303133", "#55575a", "#777f7a", "#a1aca0", "#d6dfc3", "#fbffd9"];
+const defaultSvgPaths = [
+  "symbols/01-shadow-singularity.svg",
+  "symbols/02-dark-orbit.svg",
+  "symbols/03-low-mid-wormhole.svg",
+  "symbols/04-mid-light-cone.svg",
+  "symbols/05-high-mid-spacetime-grid.svg",
+  "symbols/06-light-timewave.svg",
+  "symbols/07-highlight-chronal-flare.svg",
+];
 
 const controls = {
   mediaInput: document.querySelector("#mediaInput"),
@@ -53,7 +62,7 @@ const state = {
   svgSlots: stateNames.map((name, index) => ({
     name,
     color: defaultColors[index],
-    fileName: "Default",
+    fileName: defaultSvgPaths[index].split("/").pop(),
     image: null,
     objectUrl: null,
     cacheKey: "",
@@ -449,6 +458,19 @@ function loadSvgFile(file, index) {
   image.src = url;
 }
 
+function loadDefaultSvg(path, index) {
+  const slot = state.svgSlots[index];
+  const image = new Image();
+  image.addEventListener("load", () => {
+    slot.image = image;
+    slot.fileName = path.split("/").pop();
+    slot.cacheKey = "";
+    updateStateRows();
+    requestRender();
+  });
+  image.src = path;
+}
+
 function clearMediaUrls() {
   if (state.imageUrl) URL.revokeObjectURL(state.imageUrl);
   if (state.videoUrl) URL.revokeObjectURL(state.videoUrl);
@@ -634,6 +656,7 @@ controls.exportPng.addEventListener("click", exportPng);
 
 buildStateRows();
 controls.recordVideo.disabled = !supportedRecordingType();
+defaultSvgPaths.forEach(loadDefaultSvg);
 resizeCanvas();
 updateOutputs();
 requestRender();

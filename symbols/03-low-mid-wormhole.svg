@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Low mid wormhole">
+  <path fill="none" stroke="#000" stroke-width="16" stroke-linecap="round" d="M44 124c26-56 142-56 168 0M56 164c28-43 116-43 144 0"/>
+  <path fill="none" stroke="#000" stroke-width="14" stroke-linecap="round" d="M83 91c18 34 18 80 0 114M173 91c-18 34-18 80 0 114"/>
+  <ellipse cx="128" cy="128" rx="36" ry="18" fill="#000"/>
+</svg>

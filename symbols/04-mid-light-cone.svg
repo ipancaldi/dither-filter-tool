@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Mid light cone">
+  <path fill="#000" d="M128 20 214 112H42L128 20ZM42 144h172l-86 92-86-92Z"/>
+  <rect x="116" y="69" width="24" height="118" rx="12" fill="#000"/>
+  <circle cx="128" cy="128" r="22" fill="#000"/>
+</svg>
