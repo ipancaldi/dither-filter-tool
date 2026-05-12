@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dither Filter Tool</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="control-rail" aria-label="Dither controls">
+        <header class="brand-block">
+          <div class="brand-mark" aria-hidden="true">DF</div>
+          <div>
+            <h1>Dither Filter</h1>
+            <p>Upload an image or video, then map its tones into seven tintable SVG highlight states.</p>
+          </div>
+        </header>
+
+        <section class="panel">
+          <div class="section-head">
+            <h2>Source</h2>
+            <span id="sourceStatus">No file</span>
+          </div>
+          <label class="file-drop">
+            <span>Upload picture or video</span>
+            <input id="mediaInput" type="file" accept="image/*,video/*" />
+          </label>
+          <div class="segmented" id="aspectButtons" role="group" aria-label="Aspect ratio">
+            <button class="is-active" type="button" data-aspect="original">Original</button>
+            <button type="button" data-aspect="square">1x1</button>
+          </div>
+          <div class="segmented" id="fitButtons" role="group" aria-label="Media fit">
+            <button class="is-active" type="button" data-fit="cover">Cover</button>
+            <button type="button" data-fit="contain">Contain</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Dither</h2>
+          <label>
+            <span>Grid resolution <output id="gridValue">72</output></span>
+            <input id="gridResolution" type="range" min="12" max="160" step="1" value="72" />
+          </label>
+          <label>
+            <span>Cell padding <output id="paddingValue">8%</output></span>
+            <input id="cellPadding" type="range" min="0" max="36" step="1" value="8" />
+          </label>
+          <label>
+            <span>Background</span>
+            <input id="backgroundColor" type="color" value="#f2eee6" />
+          </label>
+          <label class="toggle-line">
+            <span>Invert tones</span>
+            <input id="invertTones" type="checkbox" />
+          </label>
+        </section>
+
+        <section class="panel">
+          <h2>Scale</h2>
+          <label>
+            <span>Shadow min <output id="minScaleValue">38%</output></span>
+            <input id="minScale" type="range" min="10" max="140" step="1" value="38" />
+          </label>
+          <label>
+            <span>Midtones <output id="midScaleValue">76%</output></span>
+            <input id="midScale" type="range" min="10" max="180" step="1" value="76" />
+          </label>
+          <label>
+            <span>Highlight max <output id="maxScaleValue">118%</output></span>
+            <input id="maxScale" type="range" min="10" max="220" step="1" value="118" />
+          </label>
+        </section>
+
+        <section class="panel">
+          <h2>Rotation</h2>
+          <div class="segmented" id="rotationButtons" role="group" aria-label="Rotation">
+            <button class="is-active" type="button" data-rotation="0">0</button>
+            <button type="button" data-rotation="90">90</button>
+            <button type="button" data-rotation="180">180</button>
+            <button type="button" data-rotation="270">270</button>
+          </div>
+          <label class="toggle-line">
+            <span>Auto rotate</span>
+            <input id="autoRotate" type="checkbox" />
+          </label>
+          <label>
+            <span>Interval <output id="intervalValue">450ms</output></span>
+            <input id="rotationInterval" type="range" min="100" max="2400" step="50" value="450" />
+          </label>
+        </section>
+
+        <section class="panel state-panel">
+          <div class="section-head">
+            <h2>Seven States</h2>
+            <label class="mini-upload">
+              <span>Upload 7 SVGs</span>
+              <input id="bulkSvgInput" type="file" accept=".svg,image/svg+xml" multiple />
+            </label>
+          </div>
+          <div id="stateRows" class="state-rows" aria-label="Shadow to highlight states"></div>
+        </section>
+      </aside>
+
+      <section class="stage" aria-label="Dither preview">
+        <div class="canvas-frame">
+          <canvas id="preview" width="1200" height="900"></canvas>
+          <video id="videoSource" muted playsinline loop></video>
+        </div>
+        <footer class="stage-actions">
+          <div class="readout">
+            <span id="canvasReadout">1200 x 900</span>
+            <span id="frameReadout">Ready</span>
+          </div>
+          <div class="export-actions">
+            <button id="playPause" type="button" disabled>Play</button>
+            <button id="recordVideo" type="button">Record WebM</button>
+            <button id="exportPng" type="button">Export PNG</button>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

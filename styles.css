@@ -1,0 +1,380 @@
+:root {
+  color-scheme: dark;
+  --paper: #0a0a0a;
+  --panel: #151515;
+  --panel-2: #202020;
+  --ink: #f7f3ea;
+  --muted: rgba(247, 243, 234, 0.66);
+  --quiet: rgba(247, 243, 234, 0.4);
+  --rule: rgba(247, 243, 234, 0.14);
+  --accent: #a8ff61;
+  --warn: #ff7a2f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    linear-gradient(rgba(247, 243, 234, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 243, 234, 0.035) 1px, transparent 1px),
+    #080808;
+  background-size: 44px 44px, 44px 44px, auto;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.app-shell {
+  display: grid;
+  gap: 16px;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.control-rail {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.brand-block,
+.panel,
+.stage {
+  border: 1px solid var(--rule);
+  background: rgba(21, 21, 21, 0.95);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.35);
+}
+
+.brand-block {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 8px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1px solid rgba(168, 255, 97, 0.5);
+  background: #0f180b;
+  color: var(--accent);
+  font-size: 0.84rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.65rem;
+  font-weight: 760;
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 0.72rem;
+  font-weight: 760;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.panel {
+  display: grid;
+  gap: 14px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.section-head > span,
+.readout span {
+  color: var(--quiet);
+  font-size: 0.69rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.71rem;
+  font-weight: 760;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+output {
+  float: right;
+  color: var(--ink);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+input[type="color"] {
+  width: 100%;
+  height: 36px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: transparent;
+  padding: 0;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.toggle-line {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.segmented,
+.export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.segmented button,
+.export-actions button,
+.mini-upload {
+  min-height: 36px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+  color: var(--ink);
+  padding: 0 12px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+
+.segmented button.is-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #050505;
+}
+
+.file-drop {
+  display: grid;
+  min-height: 62px;
+  place-items: center;
+  border: 1px dashed rgba(247, 243, 234, 0.26);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  text-align: center;
+}
+
+.file-drop input,
+.mini-upload input,
+.svg-button input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.mini-upload,
+.svg-button {
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.state-rows {
+  display: grid;
+  gap: 8px;
+}
+
+.state-row {
+  display: grid;
+  grid-template-columns: 88px 42px 1fr 78px;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.state-name {
+  min-width: 0;
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.state-row input[type="color"] {
+  height: 30px;
+}
+
+.svg-name {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--quiet);
+  font-size: 0.68rem;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.svg-button {
+  min-height: 30px;
+  border: 1px solid var(--rule);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.055);
+  color: var(--muted);
+  padding: 0 8px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.stage {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #050505;
+}
+
+.canvas-frame {
+  position: relative;
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background:
+    linear-gradient(45deg, #121212 25%, transparent 25%),
+    linear-gradient(-45deg, #121212 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #121212 75%),
+    linear-gradient(-45deg, transparent 75%, #121212 75%),
+    #0b0b0b;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  background-size: 20px 20px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 42px);
+  object-fit: contain;
+  background: #000;
+}
+
+video {
+  display: none;
+}
+
+.stage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.export-actions button {
+  border-color: rgba(168, 255, 97, 0.36);
+}
+
+@media (min-width: 1080px) {
+  .app-shell {
+    grid-template-columns: minmax(330px, 390px) minmax(0, 1fr);
+  }
+
+  .control-rail {
+    max-height: calc(100vh - 32px);
+    overflow: auto;
+    padding-right: 2px;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-shell {
+    padding: 10px;
+  }
+
+  .brand-block {
+    grid-template-columns: 1fr;
+  }
+
+  .state-row {
+    grid-template-columns: 1fr 42px 76px;
+  }
+
+  .svg-name {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
